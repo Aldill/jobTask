@@ -7,7 +7,6 @@ const checkRadio = () => {
     })
 }
 
-
 const showMoreAmount = () => {
     document.querySelector('.itemsContainer__showMore ').addEventListener('click', () => {
         checkRadio();

@@ -7,18 +7,78 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="mainBanner"></div>
-    <div class="promotionBox">
-      <div class="promotionBox__item">jeden</div>
-      <div class="promotionBox__item">
-        <input type="radio" name="showAmount" value="2" id="view2" />
-        <label for="view2">Pokaż po dwa elementy</label>
-        <input type="radio" name="showAmount" value="4" id="view4" checked />
-        <label for="view4">Pokaż po cztery elementy</label>
-        <input type="radio" name="showAmount" value="8" id="view8" />
-        <label for="view8">Pokaż po osiem elementy</label>
+    <div class="mainBanner">
+      <div class="mainBanner__item mainBanner__item--noColumn">
+        <div class="mainBanner__clockImageContainer">
+          <span class="mainBanner__clockImageContainerText mainBanner__clockImageContainerText--yellow">Gorący</span>
+          <span class="mainBanner__clockImageContainerText">Czwartek</span>
+        </div>
+        <div class="mainBanner__item">
+          <div class="mainBanner__msg">
+            <span><b>Właśnie</b> trwa!</span>
+          </div>
+          <div class="mainBanner__circleElement">
+            <img src="images/truck.png" />
+            <span class="mainBanner__circleText">
+              dostawa <br />
+              gratis
+            </span>
+          </div>
+        </div>
       </div>
-      <div class="promotionBox__item">dwa</div>
+      <div class="mainBanner__item">
+        <span class="mainBanner__text">Rabaty nawet do</span>
+        <div class="mainBanner__hugeTextContainer">
+          <span class="mainBanner__hugeText">80</span>
+          <span class="mainBanner__hugeTextPercent">%</span>
+        </div>
+      </div>
+      <div class="mainBanner__item">
+        <div class="mainBanner__clock">
+          <div class="mainBanner__clockContainer">Do końca pozostało:</div>
+          <div class="mainBanner__clockContainer">
+            <div class="mainBanner__clockCount">
+              <span class="mainBanner__clockHour">5</span>
+              <span class="mainBanner__clockDescription">dni</span>
+            </div>
+            <span class="mainBanner__clockElement">:</span>
+            <div class="mainBanner__clockCount">
+              <span class="mainBanner__clockHour">15</span>
+              <span class="mainBanner__clockDescription">godz</span>
+            </div>
+            <span class="mainBanner__clockElement">:</span>
+            <div class="mainBanner__clockCount">
+              <span class="mainBanner__clockHour">22</span>
+              <span class="mainBanner__clockDescription">min</span>
+            </div>
+            <span class="mainBanner__clockElement">:</span>
+            <div class="mainBanner__clockCount">
+              <span class="mainBanner__clockHour">42</span>
+              <span class="mainBanner__clockDescription">sek</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="promotionBox">
+      <div class="promotionBox__item">
+        <img src="images/clock.png" />
+        <span class="promotionBox__item promotionBox__item--hour">produkty na godzinę&nbsp;<b>10:00</b></span>
+      </div>
+      <div class="promotionBox__item promotionBox__item--radioButton">
+        <span>Ilość wyświetlanych produktów</span>
+        <div class="promotionBox__containerRadioButton">
+          <input type="radio" name="showAmount" value="2" id="view2" />
+          <label for="view2">2</label>
+          <input type="radio" name="showAmount" value="4" id="view4" checked />
+          <label for="view4">4</label>
+          <input type="radio" name="showAmount" value="8" id="view8" />
+          <label for="view8">8</label>
+        </div>
+      </div>
+      <div class="promotionBox__item">
+        <span class="promotionBox__item promotionBox__item--thursday">Akcja "Gorący Czwartek" nie łączy się z innymi promocjami</span>
+      </div>
     </div>
     <div class="itemsContainer">
       <div class="itemsContainer__items"></div>

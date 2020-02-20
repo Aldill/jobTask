@@ -1,37 +1,232 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
 
 body {
   margin: 0px;
   padding: 0px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   align-items: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  overflow-y: scroll; /* scroll is moving my page to left because of container with items */
 }
 
 *,
 *::after,
 *::before {
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .mainBanner {
   width: 80vw;
-  height: 200px;
+  height: 300px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   background-color: red;
 }
 
+.mainBanner__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.mainBanner__item--noColumn {
+  flex-direction: unset;
+}
+.mainBanner__text {
+  color: black;
+  text-transform: uppercase;
+}
+
+.mainBanner__hugeText {
+  color: #ffef3a;
+  font-size: 200px;
+  line-height: 1;
+}
+
+.mainBanner__hugeTextContainer {
+  display: flex;
+}
+
+.mainBanner__hugeTextPercent {
+  font-size: 100px;
+  color: #ffef3a;
+  align-self: flex-start;
+}
+.mainBanner__clock {
+  width: 400px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 3px solid white;
+}
+
+.mainBanner__clockContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-transform: uppercase;
+}
+
+.mainBanner__clockCount {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.mainBanner__clockHour,
+.mainBanner__clockElement {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.mainBanner__clockDescription {
+  font-size: 15px;
+  color: black;
+  font-weight: bold;
+}
+.mainBanner__circleText {
+  text-align: center;
+}
+
+.mainBanner__circleElement img {
+  transform: none;
+}
+
+.mainBanner__circleElement {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  justify-self: flex-end;
+  transform: rotate(10deg);
+}
+
+.mainBanner__msg {
+  padding: 25px;
+  background-color: black;
+  color: white;
+  font-size: 30px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.mainBanner__msg::before {
+  position: absolute;
+  bottom: -16px;
+  left: 0;
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: 16px solid black;
+  border-right: 26px solid transparent;
+}
+
+.mainBanner__clockImageContainer {
+  background: url('./images/clock_big.png');
+  height: 285px;
+  width: 285px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mainBanner__clockImageContainerText {
+  font-weight: bold;
+  font-size: 50px;
+  text-transform: uppercase;
+  line-height: 1;
+  color: white;
+}
+
+.mainBanner__clockImageContainerText--yellow {
+  color: #ffef3a;
+}
 .promotionBox {
   width: 80vw;
-  height: 50px;
+  height: 110px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .promotionBox__item {
+  align-items: center;
+  display: flex;
+}
+.promotionBox__item--radioButton {
+  flex-direction: column;
 }
 
+.promotionBox__containerRadioButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.promotionBox__containerRadioButton input {
+  display: none;
+}
+
+.promotionBox__containerRadioButton label {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border: 1px solid #ebebeb;
+  border-radius: 50%;
+  color: black;
+  display: flex;
+  margin: 0px 3px;
+  justify-content: center;
+  align-items: center;
+}
+
+.promotionBox__containerRadioButton label:hover {
+  background-color: #ebebeb;
+}
+
+.promotionBox__containerRadioButton input:checked + label {
+  background-color: red;
+  color: white;
+}
+
+.promotionBox__item--hour {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.promotionBox__item--thursday {
+  position: relative;
+  font-size: 14px;
+  font-weight: bold;
+}
+.promotionBox__item--thursday::before {
+  content: '!';
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 16px;
+  left: -30px;
+}
 .itemsContainer__items {
   width: 100%;
   display: grid;
@@ -57,7 +252,8 @@ body {
   font-size: 13px;
 }
 
-.itemsContainer__itemCount img {
+.itemsContainer__itemCount img,
+.promotionBox__item img {
   margin-right: 5px;
 }
 .itemsContainer__itemDiscount {
@@ -137,4 +333,21 @@ body {
 .itemsContainer__itemCompany {
   font-size: 12px;
   color: grey;
+}
+
+.itemsContainer__showMore {
+  width: 200px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: black;
+  border: 1px solid #ebebeb;
+  transition: 0.5s border ease-in-out, 0.5s letter-spacing ease-in-out;
+}
+
+.itemsContainer__showMore:hover {
+  border: 1px solid red;
+  letter-spacing: 1px;
 }
