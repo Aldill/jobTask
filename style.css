@@ -25,7 +25,7 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: red;
+  background-color: #ea2423;
 }
 
 .mainBanner__item {
@@ -35,27 +35,39 @@ body {
 }
 .mainBanner__item--noColumn {
   flex-direction: unset;
+  position: relative;
+  align-items: center;
+}
+
+.mainBanner__item--spaceBetween {
+  justify-content: space-between;
 }
 .mainBanner__text {
   color: black;
   text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: lighter;
+  margin-left: 10px;
 }
 
 .mainBanner__hugeText {
   color: #ffef3a;
-  font-size: 200px;
-  line-height: 1;
+  font-size: 175px;
+  display: inline-block;
+  font-weight: lighter;
+  line-height: 70%; /* huge problem with blank space on big font */
+}
+
+.mainBanner__hugeText--percent {
+  font-size: 120px;
 }
 
 .mainBanner__hugeTextContainer {
   display: flex;
+  position: relative;
 }
 
-.mainBanner__hugeTextPercent {
-  font-size: 100px;
-  color: #ffef3a;
-  align-self: flex-start;
-}
 .mainBanner__clock {
   width: 400px;
   height: 200px;
@@ -106,21 +118,23 @@ body {
   border-radius: 50%;
   background-color: white;
   display: flex;
+  position: absolute;
+  bottom: -40px;
+  right: 0;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  align-self: flex-end;
-  justify-self: flex-end;
   transform: rotate(10deg);
 }
 
 .mainBanner__msg {
-  padding: 25px;
+  padding: 25px 35px;
   background-color: black;
   color: white;
   font-size: 30px;
   position: relative;
   text-transform: uppercase;
+  align-self: flex-start;
 }
 
 .mainBanner__msg::before {
@@ -135,9 +149,9 @@ body {
 }
 
 .mainBanner__clockImageContainer {
-  background: url('./images/clock_big.png');
-  height: 285px;
-  width: 285px;
+  background: url('./images/clock_big.svg');
+  height: 250px;
+  width: 250px;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -146,7 +160,7 @@ body {
 
 .mainBanner__clockImageContainerText {
   font-weight: bold;
-  font-size: 50px;
+  font-size: 55px;
   text-transform: uppercase;
   line-height: 1;
   color: white;
@@ -289,15 +303,15 @@ body {
 }
 
 .itemsContainer__itemInfo--image {
-  width: 80%;
+  width: 95%;
   justify-content: center;
 }
 
-/* it makes image blurred, but is responsive to size of box
+/* it makes image blurred, but is responsive to size of box */
 .itemsContainer__itemInfo--image img {
   width: 100%;
 }
-*/
+
 .itemsContainer__itemInfo--bottom {
   height: 100px;
   width: 100%;
@@ -350,4 +364,61 @@ body {
 .itemsContainer__showMore:hover {
   border: 1px solid red;
   letter-spacing: 1px;
+}
+
+@media only screen and (max-width: 480px) {
+  .mainBanner {
+    width: 100%;
+    flex-direction: column;
+    height: auto;
+  }
+  .mainBanner__clock {
+    width: 100%;
+  }
+  .mainBanner__item--noColumn {
+    flex-direction: column;
+  }
+  .promotionBox {
+    width: 100vw;
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+  }
+  .itemsContainer__items {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 45%));
+    justify-content: center;
+    width: 100vw;
+    grid-gap: 5px;
+  }
+  .itemsContainer {
+    width: 100%;
+  }
+
+  .itemsContainer__itemDiscount {
+    display: none;
+  }
+
+  .itemsContainer__itemCount {
+    width: 100%;
+  }
+
+  .itemsContainer__item {
+    height: auto;
+  }
+  .itemsContainer__itemInfo--bottom {
+    align-items: center;
+    padding-left: 0;
+    text-align: center;
+  }
+  .mainBanner__clockImageContainer {
+    display: none;
+  }
+
+  .mainBanner__msg::before {
+    display: none;
+  }
+
+  .mainBanner__circleElement {
+    position: relative;
+  }
 }
