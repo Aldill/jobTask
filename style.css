@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
 
+/*
+COLORS:
+RED:  #ea2423,
+GREY: #ebebeb,
+
+
+TABLE OF CONTENTS
+
+1.MAIN BANNER
+2.PROMOTION BOX
+3.ITEM CONTAINER
+
+*/
+
 body {
   margin: 0px;
   padding: 0px;
@@ -7,6 +21,7 @@ body {
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
+  font-size: 16px;
   font-family: 'Open Sans', sans-serif;
   overflow-y: scroll; /* scroll is moving my page to left because of container with items */
 }
@@ -18,6 +33,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* MAIN BANNER */
 
 .mainBanner {
   width: 80vw;
@@ -38,13 +55,10 @@ body {
   position: relative;
 }
 
-.mainBanner__item--spaceBetween {
-  justify-content: space-between;
-}
 .mainBanner__text {
   color: black;
   text-transform: uppercase;
-  font-size: 18px;
+  font-size: 1em;
   align-self: flex-start;
   letter-spacing: 2px;
   font-weight: lighter;
@@ -53,19 +67,17 @@ body {
 
 .mainBanner__hugeText {
   color: #ffef3a;
-  font-size: 175px;
-  display: inline-block;
+  font-size: 10em;
   font-weight: lighter;
   line-height: 70%; /* huge problem with blank space on big font */
 }
 
 .mainBanner__hugeText--percent {
-  font-size: 120px;
+  font-size: 6em;
 }
 
 .mainBanner__hugeTextContainer {
   display: flex;
-  position: relative;
 }
 
 .mainBanner__clock {
@@ -82,6 +94,7 @@ body {
   justify-content: center;
   align-items: center;
   color: white;
+  font-weight: bold;
   text-transform: uppercase;
 }
 
@@ -90,26 +103,20 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 5px;
 }
 
 .mainBanner__clockHour,
 .mainBanner__clockElement {
-  font-size: 50px;
-  font-weight: bold;
+  font-size: 3em;
 }
 
 .mainBanner__clockDescription {
-  font-size: 15px;
+  font-size: 0.8em;
   color: black;
-  font-weight: bold;
 }
 .mainBanner__circleText {
   text-align: center;
-}
-
-.mainBanner__circleElement img {
-  transform: none;
 }
 
 .mainBanner__circleElement {
@@ -141,7 +148,7 @@ body {
   padding: 25px 35px;
   background-color: black;
   color: white;
-  font-size: 30px;
+  font-size: 1.5rem;
   position: relative;
   text-transform: uppercase;
   align-self: flex-start;
@@ -170,15 +177,18 @@ body {
 
 .mainBanner__clockImageContainerText {
   font-weight: bold;
-  font-size: 55px;
+  font-size: 3.5rem;
   text-transform: uppercase;
-  line-height: 1;
+  line-height: 1; /* remove blank space */
   color: white;
 }
 
 .mainBanner__clockImageContainerText--yellow {
   color: #ffef3a;
 }
+
+/* PROMOTION BOX */
+
 .promotionBox {
   width: 80vw;
   height: 110px;
@@ -224,17 +234,17 @@ body {
 }
 
 .promotionBox__containerRadioButton input:checked + label {
-  background-color: red;
+  background-color: #ea2423;
   color: white;
 }
 
 .promotionBox__item--hour {
-  font-size: 20px;
+  font-size: 1.2rem;
   text-transform: uppercase;
 }
 .promotionBox__item--thursday {
   position: relative;
-  font-size: 14px;
+  font-size: 0.8rem;
   font-weight: bold;
 }
 .promotionBox__item--thursday::before {
@@ -242,23 +252,22 @@ body {
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background-color: red;
+  background-color: #ea2423;
   color: white;
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  font-size: 16px;
   left: -30px;
 }
+
+/* ITEMS CONTAINER */
 .itemsContainer__items {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-  justify-content: space-between;
   grid-gap: 10px;
-  grid-auto-columns: auto;
 }
 
 .itemsContainer {
@@ -274,26 +283,25 @@ body {
   justify-content: center;
   color: black;
   width: 50%;
-  font-size: 13px;
+  font-size: 0.8rem;
 }
 
-.itemsContainer__itemCount img,
-.promotionBox__item img {
+.small__img {
   margin-right: 5px;
 }
 .itemsContainer__itemDiscount {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: red;
+  color: #ea2423;
   width: 50%;
-  border: 1px solid red;
+  border: 1px solid #ea2423;
   height: 100%;
 }
 
 .itemsContainer__item {
   height: 460px;
-  box-shadow: 0px 0px 0px 1px #ebebeb inset;
+  box-shadow: 0px 0px 0px 1px #ebebeb inset; /* makes border 1px inside div */
   position: relative;
   box-sizing: border-box;
   display: flex;
@@ -340,23 +348,23 @@ body {
 }
 
 .itemsContainer__itemActualPrice {
-  color: red;
-  font-size: 20px;
+  color: #ea2423;
+  font-size: 1.4rem;
   font-weight: bold;
   margin-right: 10px;
 }
 
 .itemsContainer__itemBeforePrice {
-  font-size: 12px;
+  font-size: 0.8rem;
   text-decoration: line-through;
 }
 
 .itemsContainer__itemName {
-  font-size: 12px;
+  font-size: 0.8rem;
 }
 
 .itemsContainer__itemCompany {
-  font-size: 12px;
+  font-size: 0.8rem;
   color: grey;
 }
 
@@ -377,16 +385,8 @@ body {
   margin: 10px 0px;
 }
 .itemsContainer__showMore:hover {
-  border: 1px solid red;
+  border: 1px solid #ea2423;
   letter-spacing: 1px;
-}
-
-.mainBanner__circleContainer {
-  bottom: -40px;
-  display: flex;
-  position: absolute;
-  justify-content: center;
-  align-items: center;
 }
 
 @media only screen and (max-width: 1440px) {
@@ -408,6 +408,7 @@ body {
     justify-content: center;
     align-items: center;
   }
+
   .mainBanner {
     width: 100vw;
   }
@@ -439,7 +440,7 @@ body {
     text-align: center;
   }
   .itemsContainer__items {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 45%));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 45%));
     justify-content: center;
     width: 100vw;
     grid-gap: 5px;
@@ -453,7 +454,7 @@ body {
     display: flex;
   }
   .itemsContainer {
-    width: 100%;
+    width: 100vw;
   }
 
   .itemsContainer__itemDiscount {
@@ -491,9 +492,9 @@ body {
   }
 
   .mainBanner__circleText--red {
-    font-size: 26px;
+    font-size: 1.8rem;
     font-weight: bold;
-    color: red;
+    color: #ea2423;
   }
 
   .mainBanner__circleElement {
@@ -514,15 +515,7 @@ body {
     display: none;
   }
 
-  .mainBanner__hugeText--percent {
-    font-size: 70px;
-  }
-
   .mainBanner__text {
-    display: none;
-  }
-
-  .promotionBox__item--thursday {
     display: none;
   }
 }

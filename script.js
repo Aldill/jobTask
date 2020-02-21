@@ -34,7 +34,7 @@ const printItems = (data, amount) => {
                     <div class="itemsContainer__item">
                         <div class="itemsContainer__itemInfo itemsContainer__itemInfo--top">
                             <div class="itemsContainer__itemCount">
-                            <img src="images/count.png" />
+                            <img class="small__img" src="images/count.png" />
                             <span>sztuk&nbsp;<b>5</b></span>
                             </div>
                             <div class="itemsContainer__itemDiscount">oszczędzasz:&nbsp;<b>${item.price.gross.base_float - item.price.gross.promo_float}zł</b></div>
