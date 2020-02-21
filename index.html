@@ -17,12 +17,25 @@
         <div class="mainBanner__msg">
           <span><b>Właśnie</b> trwa!</span>
         </div>
-        <div class="mainBanner__circleElement">
-          <img src="images/truck.png" />
-          <span class="mainBanner__circleText">
-            dostawa <br />
-            gratis
-          </span>
+        <div class="mainBanner__circleContainer">
+          <div class="mainBanner__circleElement">
+            <img src="images/truck.png" />
+            <span class="mainBanner__circleText">
+              dostawa <br />
+              gratis
+            </span>
+          </div>
+          <div class="mainBanner__circleElement mainBanner__circleElement--noDesktop">
+            <span class="mainBanner__circleText">
+              rabaty
+            </span>
+            <span class="mainBanner__circleText">
+              do
+            </span>
+            <span class="mainBanner__circleText mainBanner__circleText--red">
+              80%
+            </span>
+          </div>
         </div>
       </div>
       <div class="mainBanner__item">
@@ -65,7 +78,6 @@
         <span class="promotionBox__item promotionBox__item--hour">produkty na godzinę&nbsp;<b>10:00</b></span>
       </div>
       <div class="promotionBox__item promotionBox__item--radioButton">
-        <span>Ilość wyświetlanych produktów</span>
         <div class="promotionBox__containerRadioButton">
           <input type="radio" name="showAmount" value="2" id="view2" />
           <label for="view2">2</label>

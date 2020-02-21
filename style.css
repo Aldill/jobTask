@@ -127,6 +127,9 @@ body {
   transform: rotate(10deg);
 }
 
+.mainBanner__circleElement--noDesktop {
+  display: none;
+}
 .mainBanner__msg {
   padding: 25px 35px;
   background-color: black;
@@ -372,8 +375,14 @@ body {
     flex-direction: column;
     height: auto;
   }
-  .mainBanner__clock {
+
+  .mainBanner__item {
+    height: 100%;
     width: 100%;
+    justify-content: space-between;
+  }
+  .mainBanner__clock {
+    display: none;
   }
   .mainBanner__item--noColumn {
     flex-direction: column;
@@ -382,6 +391,7 @@ body {
     width: 100vw;
     flex-direction: column;
     height: auto;
+    padding: 15px 0px;
     text-align: center;
   }
   .itemsContainer__items {
@@ -389,6 +399,10 @@ body {
     justify-content: center;
     width: 100vw;
     grid-gap: 5px;
+  }
+
+  .mainBanner__circleElement--noDesktop {
+    display: flex;
   }
   .itemsContainer {
     width: 100%;
@@ -411,14 +425,55 @@ body {
     text-align: center;
   }
   .mainBanner__clockImageContainer {
-    display: none;
+    background: none;
+    width: 100%;
+    height: auto;
+    align-items: center;
+  }
+
+  .mainBanner__msg {
+    align-self: center;
+    width: 100%;
+    padding: 25px 0px;
+    text-align: center;
   }
 
   .mainBanner__msg::before {
     display: none;
   }
 
+  .mainBanner__circleText--red {
+    font-size: 26px;
+    font-weight: bold;
+    color: red;
+  }
+
   .mainBanner__circleElement {
     position: relative;
+    bottom: 10px;
+    margin: 0px 5px;
+  }
+
+  .mainBanner__circleContainer {
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mainBanner__hugeText {
+    display: none;
+  }
+
+  .mainBanner__hugeText--percent {
+    font-size: 70px;
+  }
+
+  .mainBanner__text {
+    display: none;
+  }
+
+  .promotionBox__item--thursday {
+    display: none;
   }
 }
