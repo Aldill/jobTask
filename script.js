@@ -1,5 +1,5 @@
 const checkRadio = () => {
-    const checkedRadio = document.querySelectorAll('input[name=showAmount');
+    const checkedRadio = document.querySelectorAll('input[name=showAmount]');
     checkedRadio.forEach(button => {
         if (button.checked) {
             getItems(button.value);
